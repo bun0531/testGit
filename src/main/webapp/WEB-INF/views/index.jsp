@@ -8,6 +8,6 @@
 </head>
 <body>
 <h3>hi</h3>
-<p> 2. reverse commit -특정 커밋에서 실행된 내용만 취소하고, 현재 내용은 그대로 가는</p>
+<p> 2. reverse commit -특정 커밋에서 실행된 내용만 취소하고, 이후 내용은 유지하고싶을 때 사용 </p>
 </body>
 </html>
