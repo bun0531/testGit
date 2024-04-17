@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC   "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+>
+<!-- 이 xml은 어떤 인터페이스를 참조해서 사용해야 하는가? -->
+<!-- 아래부분 경로 잘 확인해야한다. -->
+<mapper namespace="kr.ajax.board.dao.BoardDAO">
+
+	<select id="list" resultType="kr.ajax.board.dto.BoardDTO">
+		SELECT 
+			(select count(new_filename) from photo p where p.idx=b.idx)as img_cnt,
+			 b.idx,
+			 b.subject,
+			 b.user_name,
+			 b.bHit,
+			 b.reg_date 
+		FROM bbs b ORDER BY idx DESC
+	</select>
+		
+	<delete id="delete">
+		DELETE FROM bbs WHERE idx=#{param1}
+	</delete>
+	
+	<select id="getFiles" resultType="String">
+		SELECT new_filename FROM photo WHERE idx = #{param1}
+	</select>
+	
+	<delete id="del" parameterType="String">
+		DELETE FROM bbs WHERE idx=#{idx}
+	</delete>
+	
+
+</mapper>
