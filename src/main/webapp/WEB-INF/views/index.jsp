@@ -12,3 +12,7 @@
 <p>불필요한 내용 </p>
 </body>
 </html>
+<script>
+var arr=[];
+var obj={};
+</script>
